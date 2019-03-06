@@ -1,5 +1,11 @@
 .articles {
-  margin-top: 95px;
+  margin-top: 143px;
+  @media screen and (max-width: 665px) {
+    margin-top: 190px;
+  }
+  @media screen and (max-width: 438px) {
+    margin-top: 248px;
+  }
 }
 .article {
   margin: 20px 10%;
@@ -8,9 +14,12 @@
   border-radius: 10px;
   background-color: white;
   position: relative;
-  height: 50px;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
+
+  .article-info {
+    overflow: auto;
+  }
 
   h2 {
     font-size: 28px;
@@ -33,6 +42,8 @@
     position: absolute;
     bottom: 0;
     left: 50%;
+    width:100%;
+    text-align: center;
     font-size: 12px;
     color: grey;
     cursor: pointer;
@@ -45,6 +56,14 @@
   height: 400px;
 }
 
+.article-close{
+  display: none;
+}
 
+.article-info {
+  margin: 5px 0;
+  height: 100%;
+  overflow: auto;
+}
 
 
