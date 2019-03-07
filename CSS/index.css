@@ -19,12 +19,48 @@
 }
 /* Below this line is where you will start your work */
 /* It is important to note, you will not be writing any CSS in this file*/
+/**
+ * ----------------------------------------
+ * animation slide-in-top
+ * ----------------------------------------
+ */
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.slide-in-top {
+  animation: slide-in-top 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+/**
+ * ----------------------------------------
+ * animation slide-in-left
+ * ----------------------------------------
+ */
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.slide-in-left {
+  animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
 .header {
   width: 100%;
-  height: 75px;
   background-color: #388E3C;
   color: white;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   position: fixed;
@@ -32,8 +68,117 @@
   z-index: 2;
 }
 .header h1 {
-  margin: 0;
+  margin-left: 88px;
   font-size: 48px;
+}
+.menu-button {
+  position: absolute;
+  left: 20px;
+  cursor: pointer;
+}
+.menu {
+  display: none;
+  position: fixed;
+  top: 85px;
+  left: 0;
+  width: 60%;
+  max-width: 350px;
+  min-width: 160px;
+  height: 100vh;
+  /* This give the height 100% of the screen or, '100% of View Height' */
+  background-color: #81C784;
+  border-left: none;
+  border-bottom: none;
+  z-index: 2;
+  /* This set the layer level of the element, it has precendence over initial level of 1*/
+}
+@media screen and (max-width: 665px) {
+  .menu {
+    top: 120px;
+  }
+}
+@media screen and (max-width: 438px) {
+  .menu {
+    top: 150px;
+  }
+}
+.menu ul {
+  padding: 10%;
+}
+.menu ul li {
+  list-style-type: none;
+  font-size: 32px;
+  padding: 30px 0;
+  text-align: center;
+}
+.menu--open {
+  display: block;
+}
+.articles {
+  margin-top: 123px;
+  padding: 20px;
+}
+@media screen and (max-width: 665px) {
+  .articles {
+    margin-top: 170px;
+  }
+}
+@media screen and (max-width: 438px) {
+  .articles {
+    margin-top: 228px;
+  }
+}
+.article {
+  margin: 20px 10%;
+  padding: 1px 20px 25px;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 2px 2px 2px lightgrey;
+}
+.article .article-info {
+  height: 300px;
+  background: rgba(255, 255, 255, 0.295);
+  padding: 5px;
+  margin: 10px 0;
+  overflow: auto;
+}
+.article h2 {
+  font-size: 28px;
+  padding: 0;
+  margin: 15px 0 0;
+}
+.article .date {
+  margin: 0;
+  font-size: 14px;
+}
+.article .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.article .expandButton {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  color: grey;
+  cursor: pointer;
+  transform: translate(-50%);
+  background-color: white;
+}
+.article-open {
+  height: 400px;
+}
+.article-close {
+  display: none;
+}
+* {
+  box-sizing: border-box;
 }
 html,
 body {

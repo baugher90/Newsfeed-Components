@@ -1,16 +1,32 @@
 .articles {
-  margin-top: 95px;
+  margin-top: 123px;
+  padding: 20px;
+  @media screen and (max-width: 665px) {
+    margin-top: 170px;
+  }
+  @media screen and (max-width: 438px) {
+    margin-top: 228px;
+  }
 }
 .article {
   margin: 20px 10%;
-  padding: 0 20px 25px;
+  padding: 1px 20px 25px;
   border: 1px solid lightgrey;
   border-radius: 10px;
   background-color: white;
   position: relative;
-  height: 50px;
   overflow: hidden;
   box-shadow: 2px 2px 2px lightgrey;
+  
+  
+
+  .article-info {
+    height:300px;
+    background: rgba(255, 255, 255, 0.295);
+    padding:5px;
+    margin: 10px 0;
+    overflow: auto;
+  }
 
   h2 {
     font-size: 28px;
@@ -33,6 +49,8 @@
     position: absolute;
     bottom: 0;
     left: 50%;
+    width:100%;
+    text-align: center;
     font-size: 12px;
     color: grey;
     cursor: pointer;
@@ -45,6 +63,9 @@
   height: 400px;
 }
 
+.article-close{
+  display: none;
+}
 
 
 

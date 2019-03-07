@@ -7,15 +7,27 @@
 .menu {
   display: none;
   position: fixed;
-  top: 75px;
+  top: 85px;
   left: 0;
-  width: 350px;
+  width: 60%;
+  max-width:350px;
+  min-width:160px;
   height: 100vh; /* This give the height 100% of the screen or, '100% of View Height' */
   background-color: #81C784;
-  border: 1px solid #004D40;
+  //border: 1px solid #004D40;
   border-left: none;
   border-bottom: none;
   z-index: 2; /* This set the layer level of the element, it has precendence over initial level of 1*/
+  @media screen and (max-width: 665px) {
+    top: 120px;
+  }
+  @media screen and (max-width: 438px) {
+    top: 150px;
+  }
+}
+
+.menu ul {
+  padding: 10%;
 }
 
 .menu ul li{
